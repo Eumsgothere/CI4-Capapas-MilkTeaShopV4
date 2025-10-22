@@ -57,7 +57,6 @@ switch ($page ?? '') {
             </style>
         ';
         break;
-
     case 'moodboard':
         $pageTitle = 'Miltank Tea Shop - Mood Board';
         $extraStyles = "
@@ -66,7 +65,6 @@ switch ($page ?? '') {
             body { font-family: 'Poppins', sans-serif; background: #fcebb7; color: #2f2f2f; display: flex; flex-direction: column; min-height: 100vh; }
             section { max-width: 1100px; margin: 2rem auto; padding: 0 2rem; }
             section h2 { text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem; color: #4a90e2; font-family: 'Lilita One', cursive; }
-
             .palette { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
             .swatch { width: 120px; height: 120px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.8rem; font-weight: 600; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); border: 3px solid #ddd; }
             .pink { background: #f6b6c4; }
@@ -74,11 +72,9 @@ switch ($page ?? '') {
             .blue { background: #4a90e2; color: #fff; }
             .dark { background: #2f2f2f; color: #fff; }
             .white { background: #fff; }
-
             .typography { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center; }
             .heading-font { font-family: 'Lilita One', cursive; font-size: 2rem; color: #4a90e2; }
             .body-font { font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555; }
-
             .buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
             .btn { padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.3s; border: none; }
             .btn-primary { background: #f6b6c4; color: #2f2f2f; }
@@ -88,22 +84,93 @@ switch ($page ?? '') {
             .btn-bordered { background: transparent; border: 2px solid #f6b6c4; color: #2f2f2f; }
             .btn-bordered:hover { background: #f6b6c4; }
             .btn-disabled { background: #ddd; color: #999; cursor: not-allowed; }
-
             .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
             .card { background: #fff; border-radius: 14px; border: 2px solid #f6b6c4; overflow: hidden; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
             .card:hover { transform: translateY(-8px); box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15); }
             .card img { width: 100%; height: 200px; object-fit: cover; }
             .card-content { padding: 1rem; text-align: center; }
             .card-content h3 { margin-bottom: 0.5rem; font-family: 'Lilita One', cursive; }
-
             .logos { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
             .logo { width: 120px; height: 120px; display: flex; justify-content: center; align-items: center; background: #f6b6c4; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; overflow: hidden; }
             .circle { border-radius: 50%; }
             .logo img { width: 80%; height: auto; }
-
             .page-title { text-align: center; padding: 1rem 0; }
             .page-title h2 { font-family: 'Lilita One', cursive; font-size: 3.5rem; color: #2f2f2f; margin: 0; }
         </style>
+        ";
+        break;
+
+    case 'dashboard':
+        $pageTitle = 'Miltank Tea Shop - Admin Dashboard';
+        $extraStyles = "
+              <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    background: #fcebb7;
+    color: #2f2f2f;
+}
+
+main.menu-page {
+    flex: 10; 
+    padding: 20rem;
+}main.dashboard-page {
+    flex: 1; /* takes all space above footer */
+    padding: 2rem;
+}
+
+        .dashboard-header {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            color: #e36fa4;
+        }
+
+        .dashboard-cards {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 2rem 1rem;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e36fa4;
+            margin: 0;
+        }
+    </style>
+
     ";
         break;
 
