@@ -9,49 +9,48 @@ class CreateMenuTable extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id'          => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'name' => [
+            'name'        => [
                 'type'       => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => '255',
             ],
             'description' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'price' => [
+            'price'       => [
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
             ],
-            'image_url' => [
-                'type' => 'VARCHAR',
-                'constraint' => 512,
-                'null' => true,
+            'image'       => [
+                'type'       => 'VARCHAR',
+                'constraint' => '512',
+                'null'       => true,
             ],
-            'created_at' => [
+            'created_at'  => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'updated_at' => [
+            'updated_at'  => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'deleted_at' => [
+            'deleted_at'  => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
         ]);
-
         $this->forge->addKey('id', true);
-        $this->forge->createTable('menu', true);
+        $this->forge->createTable('menu');
     }
 
     public function down()
     {
-        $this->forge->dropTable('menu', true);
+        $this->forge->dropTable('menu');
     }
 }
