@@ -57,53 +57,103 @@ switch ($page ?? '') {
             </style>
         ';
         break;
+    case 'roadmap':
+        $pageTitle = 'Miltank — Road Map';
+        $extraStyles = '
+            <style>
+                *{box-sizing:border-box;margin:0;padding:0}
+                body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:#fcebb7;color:#2f2f2f}
+                .page-title{text-align:center;padding:1rem 0;}
+                .page-title h2{font-family:"Lilita One",cursive;font-size:3.5rem;color:#2f2f2f;}
+                main{max-width:1000px;margin:28px auto;padding:0 16px;}
+                .timeline{position:relative;padding:8px 0 48px;}
+                .timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#e6e2e2;transform:translateX(-50%);border-radius:2px;}
+                .item{position:relative;margin:28px 0;}
+                .dot{position:absolute;left:50%;transform:translateX(-50%);top:10px;width:36px;height:36px;border-radius:50%;background:#f6b6c4;border:4px solid #fcebb7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#2f2f2f;box-shadow:0 6px 12px rgba(0,0,0,0.06);z-index:2;}
+                .card{width:45%;background:#fff;padding:16px;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);}
+                .left .card{margin-right:auto;}
+                .right .card{margin-left:auto;}
+                .title{font-weight:700;color:#2f2f2f;margin-bottom:6px;}
+                .desc{color:#444;font-size:14px;}
+                .status{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:12px;color:#fff;font-weight:700;font-size:13px;}
+                .done{background:#673ab7;}
+                .backlog{background:#9e9e9e;}
+                @media(max-width:760px){.timeline::before{left:28px;transform:none}.dot{left:28px;transform:none;top:0}.card{width:100%;margin-left:44px;margin-right:16px}.left .card,.right .card{margin:0 0 0 44px}}
+            </style>
+        ';
+        break;
 
-    case 'moodboard':
-        $pageTitle = 'Miltank Tea Shop - Mood Board';
+    case 'dashboard':
+        $pageTitle = 'Miltank Tea Shop - Admin Dashboard';
         $extraStyles = "
-             <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: 'Poppins', sans-serif; background: #fcebb7; color: #2f2f2f; display: flex; flex-direction: column; min-height: 100vh; }
-            section { max-width: 1100px; margin: 2rem auto; padding: 0 2rem; }
-            section h2 { text-align: center; font-size: 1.8rem; margin-bottom: 1.5rem; color: #4a90e2; font-family: 'Lilita One', cursive; }
+              <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+}
 
-            .palette { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-            .swatch { width: 120px; height: 120px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 0.8rem; font-weight: 600; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); border: 3px solid #ddd; }
-            .pink { background: #f6b6c4; }
-            .cream { background: #fcebb7; }
-            .blue { background: #4a90e2; color: #fff; }
-            .dark { background: #2f2f2f; color: #fff; }
-            .white { background: #fff; }
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    background: #fcebb7;
+    color: #2f2f2f;
+}
 
-            .typography { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center; }
-            .heading-font { font-family: 'Lilita One', cursive; font-size: 2rem; color: #4a90e2; }
-            .body-font { font-family: 'Poppins', sans-serif; font-size: 1rem; color: #555; }
+main.menu-page {
+    flex: 10; 
+    padding: 20rem;
+}main.dashboard-page {
+    flex: 1; /* takes all space above footer */
+    padding: 2rem;
+}
 
-            .buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-            .btn { padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.3s; border: none; }
-            .btn-primary { background: #f6b6c4; color: #2f2f2f; }
-            .btn-primary:hover { background: #4a90e2; color: #fff; }
-            .btn-secondary { background: #4a90e2; color: #fff; }
-            .btn-secondary:hover { background: #2f2f2f; }
-            .btn-bordered { background: transparent; border: 2px solid #f6b6c4; color: #2f2f2f; }
-            .btn-bordered:hover { background: #f6b6c4; }
-            .btn-disabled { background: #ddd; color: #999; cursor: not-allowed; }
+        .dashboard-header {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
 
-            .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-            .card { background: #fff; border-radius: 14px; border: 2px solid #f6b6c4; overflow: hidden; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-            .card:hover { transform: translateY(-8px); box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15); }
-            .card img { width: 100%; height: 200px; object-fit: cover; }
-            .card-content { padding: 1rem; text-align: center; }
-            .card-content h3 { margin-bottom: 0.5rem; font-family: 'Lilita One', cursive; }
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            color: #e36fa4;
+        }
 
-            .logos { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-            .logo { width: 120px; height: 120px; display: flex; justify-content: center; align-items: center; background: #f6b6c4; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; overflow: hidden; }
-            .circle { border-radius: 50%; }
-            .logo img { width: 80%; height: auto; }
+        .dashboard-cards {
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
 
-            .page-title { text-align: center; padding: 1rem 0; }
-            .page-title h2 { font-family: 'Lilita One', cursive; font-size: 3.5rem; color: #2f2f2f; margin: 0; }
-        </style>
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding: 2rem 1rem;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e36fa4;
+            margin: 0;
+        }
+    </style>
+
     ";
         break;
 
