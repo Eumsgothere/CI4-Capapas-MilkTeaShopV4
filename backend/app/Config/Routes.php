@@ -14,3 +14,4 @@ $routes->get('/menu', 'Users::menu');
 $routes->get('/order', 'Users::order');
 $routes->get('admin/dashboard', 'AdminDashboard::index');
 $routes->get('menu', 'MenuController::index');
+$routes->get('/accounts', 'Users::index');

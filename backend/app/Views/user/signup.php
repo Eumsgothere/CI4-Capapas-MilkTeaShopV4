@@ -7,13 +7,21 @@
 
     <?= view('components/header'); ?>
 
-
     <div class="container">
         <div class="card">
             <h2>Sign Up</h2>
             <form action="/" method="post">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="middle_name">Middle Name</label>
+                <input type="text" id="middle_name" name="middle_name">
+
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
 
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
