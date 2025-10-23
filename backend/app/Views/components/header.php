@@ -9,6 +9,7 @@
     <nav>
         <a href="/">Home</a>
         <a href="/menu">Menu</a>
+        <a href="/order">Your Orders</a>
         <a href="/moodboard">Mood Board</a>
         <a href="/roadmap">Road Map</a>
         <a href="/login">Login</a>
