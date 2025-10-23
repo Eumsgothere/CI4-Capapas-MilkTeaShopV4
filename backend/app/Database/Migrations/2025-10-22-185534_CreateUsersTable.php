@@ -15,6 +15,11 @@ class CreateUsersTable extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'username' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 50,
+                'null'       => false,
+            ],
             'first_name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 100,
@@ -40,44 +45,6 @@ class CreateUsersTable extends Migration
                 'constraint' => 255,
                 'null'       => false,
             ],
-            'type' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 50,
-                'default'    => 'client',
-                'null'       => false,
-            ],
-            'account_status' => [
-                'type'       => 'TINYINT',
-                'constraint' => 1,
-                'default'    => 1,
-                'null'       => false,
-            ],
-            'email_activated' => [
-                'type'       => 'TINYINT',
-                'constraint' => 1,
-                'default'    => 0,
-                'null'       => false,
-            ],
-            'newsletter' => [
-                'type'       => 'TINYINT',
-                'constraint' => 1,
-                'default'    => 1,
-                'null'       => false,
-            ],
-            'gender' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 20,
-                'null'       => true,
-            ],
-            'profile_image' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255,
-                'null'       => true,
-            ],
-            'deleted_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -87,9 +54,9 @@ class CreateUsersTable extends Migration
                 'null' => true,
             ],
         ]);
-
         $this->forge->addKey('id', true);
         $this->forge->addUniqueKey('email');
+        $this->forge->addUniqueKey('username');
         $this->forge->createTable('users', true);
     }
 

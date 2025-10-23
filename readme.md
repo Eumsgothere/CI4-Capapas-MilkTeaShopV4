@@ -5,16 +5,16 @@
 
 <div align="center">
   <a href="https://github.com/zyx-0314/">
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+ <img src="/1758800584.685317-nobg.png" alt="Miltank Pokémon mascot" width="130" height="100">
   </a>
 <!-- * Title Section -->
-  <h3 align="center">AD - CI4 Template</h3>
+  <h3 align="center">AD - CI4 Capapas Miltank Tea Shop</h3>
 </div>
 
 <!-- * Description Section -->
 <div align="center">
-This repository is a beginner-friendly CodeIgniter 4 template.  
-It helps teams quickly bootstrap backend + frontend projects, with simple sample modules that show how to extend the system.
+  Hello This is my Milktea shop repository :DDD
+  INSPIRED BY MILTANK FROM POKEMON
 </div>
 
 <br/>
@@ -55,22 +55,27 @@ It helps teams quickly bootstrap backend + frontend projects, with simple sample
 
 ## Overview
 
-This template provides a **minimal CodeIgniter 4 project layout** with conventions for file organization, commit practices, and simple modules.
+Miltank Tea Shop is an online milk tea ordering system created using the CodeIgniter 4 that is meant to demonstrate an interactive and appealing visual shopping experience over the internet. 
 
-It is designed to be **easy to start with** and a **reference for adding new features**.
+It has a warm pastel theme that is based on the Miltank mascot and sections of browsing, ordering, and user account management. 
 
-* **Purpose**: a clean starting point for CI4 apps.
-* **Audience**: developers who want a predictable structure and quick onboarding.
+Purpose: Have a convenient online milk tea store where people can order their drinks online.
+
+Audience: consists of small business owners and developers who are learning how to develop a CRUD-based e-commerce site using CodeIgniter 4.
 
 ### Key Components
 
-These are **sample modules** included (or suggested) for learning how to add features:
 
-| Component                 | Purpose                                                             | Notes                                                   |
-| ------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------- |
-| **Auth (Sample)**         | Basic login/logout and role check (admin/user).                     | Uses CI4 sessions + MySQL `users` table.                |
-| **CRUD Module**           | Example entity (`Posts` or `Tasks`) with create/read/update/delete. | Demonstrates Controller → Service → Repository pattern. |
-| **Scheduler (Sample)**    | Simple to-do list with due dates.                                   | Shows how to extend with new tables and services.       |
+
+| Component                               | Purpose                                                                              |Notes                                          |
+| ----------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------- |
+|User CRUD (Sign Up / Sign In / Profile)  | Customers can create accounts, log in securely, and manage their profiles.           |Uses session-based authentication.             |
+|Product CRUD (Milk Tea Menu Management)  | Admins can add, edit, or remove milk tea items, toppings, and prices from the menu.  |Reflects updates dynamically on the Menu page. |
+|Order CRUD (Customer Orders).            | Customers can place orders and view their history; admins can update order statuses. |Supports checkout and order tracking.          |
+|Menu Page.                               | Displays featured drinks and best sellers in a card layout.                          |Pastel theme with hover animations.            |
+|Road Map Page.                           | Timeline view of milestones and progress updates.                                    |Uses styled cards for each project goal.       |
+|Mood Board Page.                         | Showcases color palette, fonts, and component styles.                                |Helps maintain design consistency.             |
+
 
  <!-- ! Start simple. Use these modules as **learning samples**; extend or replace them based on your project’s needs. -->
 
@@ -88,12 +93,13 @@ These are **sample modules** included (or suggested) for learning how to add fea
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
 ![CodeIgniter](https://img.shields.io/badge/CodeIgniter-EF4223?style=for-the-badge\&logo=codeigniter\&logoColor=white)
 
+#### UI Library
+
+![Uiverse](https://img.shields.io/badge/Uiverse-%238A2BE2?style=for-the-badge)
+
 #### Databases
 
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge\&logo=mysql\&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge\&logo=firebase\&logoColor=black)
+none yet :/ kasi wala pa
 
 <!-- ! Keep only the used technology -->
 
@@ -104,7 +110,7 @@ These are **sample modules** included (or suggested) for learning how to add fea
 Run the development stack and the app (rebuild if needed):
 
 ```cmd
-docker compose up --watch
+docker compose up -d --build
 ```
 
 Common utility commands (run inside the project root):
