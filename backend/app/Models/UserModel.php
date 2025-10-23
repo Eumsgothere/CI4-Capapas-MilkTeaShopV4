@@ -8,22 +8,18 @@ class UserModel extends Model
 {
     protected $table      = 'users';
     protected $primaryKey = 'id';
-    protected $returnType = '\App\Entities\User';
+    protected $returnType = 'array';
     protected $allowedFields = [
         'username',
-        'firstname',
-        'middlename',
-        'lastname',
+        'first_name',
+        'middle_name',
+        'last_name',
         'email',
-        'password',
+        'password_hash',
         'type',
-        'account_status',
-        'email_activated'
     ];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-    protected $useSoftDeletes = true;
-    protected $deletedField  = 'deleted_at';
 }

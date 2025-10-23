@@ -26,7 +26,8 @@
                         <td><?= esc($user['middle_name']) ?></td>
                         <td><?= esc($user['last_name']) ?></td>
                         <td><?= esc($user['email']) ?></td>
-                        <td><?= $user['created_at'] ?></td>
+                        <td><?= esc($user['created_at']) ?></td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
