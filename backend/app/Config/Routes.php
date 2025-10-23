@@ -16,6 +16,7 @@ $routes->get('/menu', 'Users::menu');
 $routes->get('/menu', 'MenuController::index');
 
 $routes->get('/accounts', 'Users::index');
+$routes->get('admin/accounts', 'AdminAccountsController::index');
 
 $routes->get('admin/dashboard', 'AdminDashboard::index');
 
