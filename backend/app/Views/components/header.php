@@ -1,3 +1,4 @@
+<?php $session = session(); ?>
 <header>
     <h1>
         <a href="/" class="logo-button">
@@ -9,12 +10,30 @@
     <nav>
         <a href="/">Home</a>
         <a href="/menu">Menu</a>
-        <a href="/order">Your Orders</a>
         <a href="/moodboard">Mood Board</a>
         <a href="/roadmap">Road Map</a>
-        <a href="/login">Login</a>
+
+        <?php if ($session->has('user')): ?>
+            <?php $type = $session->get('user')['type']; ?>
+
+            <?php if ($type === 'admin' || $type === 'manager'): ?>
+                <a href="/admin/dashboard">Dashboard</a>
+                <a href="/admin/accounts">Accounts</a>
+                <a href="/admin/orders">Orders</a>
+            <?php else: ?>
+                <a href="/order">Your Orders</a>
+            <?php endif; ?>
+
+            <a href="/logout">Logout</a>
+        <?php else: ?>
+            <a href="/login">Login</a>
+            <a href="/signup">Sign Up</a>
+        <?php endif; ?>
     </nav>
 </header>
+
+
+
 
 <style>
     header {
