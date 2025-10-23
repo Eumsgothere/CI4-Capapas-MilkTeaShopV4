@@ -99,6 +99,63 @@ switch ($page ?? '') {
         </style>
         ";
         break;
+    case 'admin-orders':
+        $pageTitle = 'Miltank Tea Shop - Admin Orders';
+        $extraStyles = "
+        <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        background: #fcebb7;
+        color: #2f2f2f;
+    }
+
+    main {
+        flex: 1; /* take remaining space, push footer down */
+        max-width: 1200px;
+        margin: 2rem auto;
+        width: 95%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 0.5rem 0.7rem;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background: #f6b6c4;
+    }
+
+    tr:hover {
+        background: #fcebb7;
+    }
+
+    footer {
+        flex-shrink: 0;
+        text-align: center;
+        padding: 1rem 0;
+        background: #f6b6c4;
+        font-weight: 500;
+        color: #2f2f2f;
+    }
+
+
+        </style>
+    ";
+        break;
 
     case 'dashboard':
         $pageTitle = 'Miltank Tea Shop - Admin Dashboard';

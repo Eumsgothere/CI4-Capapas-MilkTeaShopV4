@@ -1,7 +1,6 @@
 <?php
 $btnText = $btnText ?? 'Click Me';
-$btnLink = $btnLink ?? '#';
-$btnType = $btnType ?? 'primary'; // primary, secondary, bordered
+$btnType = $btnType ?? 'primary';
 $btnDisabled = $btnDisabled ?? false;
 
 $classes = 'btn';
@@ -11,9 +10,9 @@ if ($btnType === 'bordered') $classes .= ' btn-bordered';
 if ($btnDisabled) $classes .= ' btn-disabled';
 ?>
 
-<a href="<?= $btnLink ?>" class="<?= $classes ?>" <?= $btnDisabled ? 'disabled' : '' ?>>
+<button type="submit" class="<?= $classes ?>" <?= $btnDisabled ? 'disabled' : '' ?>>
     <?= $btnText ?>
-</a>
+</button>
 
 <style>
     .btn {
@@ -21,9 +20,8 @@ if ($btnDisabled) $classes .= ' btn-disabled';
         padding: 0.75rem 1.5rem;
         border-radius: 8px;
         font-weight: 600;
-        text-decoration: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
         text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:hover:not(.btn-disabled) {

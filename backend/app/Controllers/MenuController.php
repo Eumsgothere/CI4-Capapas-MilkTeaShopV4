@@ -12,6 +12,6 @@ class MenuController extends BaseController
         $data = [
             'menuItems' => $menuModel->findAll()
         ];
-        return view('menu', $data);
+        return view('user/menu', $data);
     }
 }

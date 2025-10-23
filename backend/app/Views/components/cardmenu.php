@@ -4,10 +4,14 @@
     <p><?= $desc ?></p>
     <div class="price"><?= $price ?></div>
 
-    <!-- Add the button here -->
-    <?= view('components/button', [
-        'btnText' => 'Order Now',
-        'btnLink' => '/order?item=' . urlencode($title),
-        'btnType' => 'primary'
-    ]) ?>
+    <form action="/order/add" method="post" style="margin-top: 10px;">
+        <input type="hidden" name="title" value="<?= $title ?>">
+        <input type="hidden" name="price" value="<?= $price ?>">
+        <?= view('components/button', [
+            'btnText' => 'Order Now',
+            'btnType' => 'primary',
+            'btnSubmit' => true
+        ]) ?>
+
+    </form>
 </div>
