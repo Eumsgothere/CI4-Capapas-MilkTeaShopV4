@@ -45,6 +45,12 @@ class CreateUsersTable extends Migration
                 'constraint' => 255,
                 'null'       => false,
             ],
+            'type' => [
+                'type'       => 'ENUM',
+                'constraint' => ['admin', 'client'],
+                'default'    => 'client',
+                'null'       => false,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
